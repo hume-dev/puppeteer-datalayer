@@ -111,8 +111,9 @@ module.exports = class dataLayer {
      */
     async getLatestEvent(eventName) {
         let dL = await this.history
+        let matchingEvents
         if (eventName !== undefined) {
-            let matchingEvents = dL.filter(event => {
+            matchingEvents = dL.filter(event => {
                 return event.event == eventName
             })
         }
@@ -133,7 +134,7 @@ module.exports = class dataLayer {
      * @return {Promise} A Promise that resolves to the full dataLayer array
      */
     get history() {
-        return page.evaluate(() => {
+        return this.page.evaluate(() => {
             return new Promise((resolve, reject) => {
                 try {
                     resolve(
@@ -187,12 +188,15 @@ module.exports = class dataLayer {
      * happens
      */
     async waitForEvent(event, options = {}) {
-        return page.waitForFunction(event => {
-            return (
-                window.dataLayer.filter(msg => {
-                    return msg.event == event
-                }).length > 0
-            )
-        }, options)
+        return this.page.waitForFunction(
+            event => {
+                return (
+                    window.dataLayer.filter(msg => msg.event == event).length >
+                    0
+                )
+            },
+            options,
+            event
+        )
     }
 }

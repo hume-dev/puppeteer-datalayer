@@ -11,8 +11,7 @@
         "type": "git",
         "url": "git+https://github.com/justusbluemer/puppeteer-datalayer.git"
     },
-    "author": "",
-    "license": "ISC",
+    "author": "Justus Blümer",
     "bugs": {
         "url": "https://github.com/justusbluemer/puppeteer-datalayer/issues"
     },
