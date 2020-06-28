@@ -63,7 +63,7 @@ module.exports = class dataLayer {
      * as an object
      */
     async getDataModel(containerId = this.containerId) {
-        return this.page.evalute(function(containerId) {
+        return this.page.evaluate(function(containerId) {
             return new Promise((resolve, reject) => {
                 try {
                     var dataModel = google_tag_manager[
