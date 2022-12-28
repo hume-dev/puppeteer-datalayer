@@ -2,7 +2,7 @@
     "name": "puppeteer-datalayer",
     "version": "1.0.2",
     "description": "puppeteer-datalayer is a node.js module to facilitate interaction with Google Tag Manager's dataLayer in combination with Puppeteer.",
-    "main": "index.js",
+    "main": "src/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "docs:build": "documentation readme index.js --section=API --markdown-toc-max-depth=2"
@@ -15,5 +15,11 @@
     "bugs": {
         "url": "https://github.com/justusbluemer/puppeteer-datalayer/issues"
     },
-    "homepage": "https://github.com/justusbluemer/puppeteer-datalayer#readme"
+    "homepage": "https://github.com/justusbluemer/puppeteer-datalayer#readme",
+    "devDependencies": {
+        "http-server": "^14.1.1",
+        "puppeteer": "^19.4.1"
+    },
+    "dependencies": {
+    }
 }
